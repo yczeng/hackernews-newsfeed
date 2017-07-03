@@ -1,0 +1,24 @@
+{
+  "name": "HackerNews NewsFeed",
+  "version": "0.0.0",
+  "author": "Catherine Zeng",
+  "manifest_version": 2,
+  "description": "Replace your Facebook NewsFeed with HackerNews!",
+  "permissions": [
+    "http://www.facebook.com/*",
+    "https://news.ycombinator.com/*",
+    "storage"
+  ],
+  "web_accessible_resources": [ "locales/*"],
+  "browser_action": {
+        "default_popup": "popup.html"
+    },
+  "content_scripts": [
+    {
+        "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
+        "js" : [ "script.js"],
+        "run_at" : "document_start",
+        "all_frames" : false
+    }
+  ]
+}
