@@ -3,7 +3,9 @@ Are you sick of your ad-ridden Facebook newsfeed? Are you sick of wasting your t
 
 Look no further! hackernews-newsfeed converts your Facebook newsfeed into Hacker News! So that you can waste time AND feel productive!
 
-<img src="screenshot.png" width="40%">
+<center>
+<img src="screenshot.png" width="60%">
+</center>
 
 # Installation
 
