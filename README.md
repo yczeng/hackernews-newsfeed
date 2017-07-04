@@ -1,7 +1,7 @@
 # Convert Facebook newsfeed to Hacker News!
-Are you sick of your ad-ridden Facebook newsfeed? Are you sick of wasting your time on click bait? Or being creeped out by Facebook knowing your search history?
+Are you sick of your ad-ridden Facebook newsfeed or wasting your time on click-bait?
 
-Look no further! hackernews-newsfeed converts your Facebook newsfeed into Hacker News! So that you can waste time AND feel productive!
+hackernews-newsfeed converts your Facebook newsfeed into Hacker News! So that you can waste time on click-bait AND feel good about yourself!
 
 <center>
 <img src="screenshot.png" width="60%">
