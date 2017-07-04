@@ -1,21 +1,25 @@
 {
-  "name": "HackerNews NewsFeed",
+  "name": "Convert Facebook Newsfeed to Hacker News",
   "version": "0.0.0",
   "author": "Catherine Zeng",
   "manifest_version": 2,
-  "description": "Replace your Facebook NewsFeed with HackerNews!",
+  "description": "Sick of your ad-ridden Facebook newsfeed? Convert it to Hacker News!",
   "permissions": [
     "http://www.facebook.com/*",
     "https://www.facebook.com/*",
     "http://web.facebook.com/*",
     "https://web.facebook.com/*",
-    "https://news.ycombinator.com/*",
-    "storage"
+    "https://news.ycombinator.com/*"
   ],
-  "web_accessible_resources": [ "locales/*"],
+
+  "icons": {
+    "128": "hacker_news.png",
+    "32": "hacker_news.png"
+  },
+
   "browser_action": {
-        "default_popup": "popup.html"
-    },
+    "default_icon": "hacker_news.png"
+  },
   "content_scripts": [
     {
         "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*","http://web.facebook.com/*","https://web.facebook.com/*", "https://www.facebook.com/?ref=tn_tnmn"],

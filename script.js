@@ -9,6 +9,7 @@ function getHackerNews(){
   xhr.onreadystatechange = function() {
       if (xhr.readyState == XMLHttpRequest.DONE) {
           text = xhr.responseText
+          //alert(text)
           replaceContent(text)
       }
   }
