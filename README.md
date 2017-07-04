@@ -1,5 +1,5 @@
 # hackernews-newsfeed
-Convert Facebook newsfeed to Hacker News, so you can waste time on click-bait AND feel good about yourself!
+Convert your Facebook newsfeed to Hacker News, so you can waste time on click-bait AND feel good about yourself!
 
 <img src="preview.png" width="60%">
 
