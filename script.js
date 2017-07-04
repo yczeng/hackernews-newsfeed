@@ -8,8 +8,8 @@ function getHackerNews(){
   var text = ""
   xhr.onreadystatechange = function() {
       if (xhr.readyState == XMLHttpRequest.DONE) {
-          text = xhr.responseText
-          //alert(text)
+          text = processHTML(xhr.responseText)
+          console.log(text)
           replaceContent(text)
       }
   }
@@ -17,10 +17,27 @@ function getHackerNews(){
   xhr.send(null);
   return
 }
+var badlinks = new Array("item", "item", "vote", "newest", "news", "threads", "new","show", "ask", "jobs", "submit", "security", "lists", "bookmark", "dmca", "flag", "hide", "user", "logout", "login", "from")
 
+function processHTML(text){
+  var newHTML = ""
+  var lines = text.split('\n');
+
+  for(var i = 0;i < lines.length;i++){
+    var tempLine = lines[i]
+    for(var j = 0; j < badlinks.length; j++){
+      index = tempLine.search("href=\"" + badlinks[j])
+
+      if (index != -1){
+        tempLine = tempLine.slice(0, index + 5) + "\"https://news.ycombinator.com/" + tempLine.slice(index+6)
+      }
+    }
+    newHTML = newHTML.concat(tempLine) + "\n"
+  }
+  return newHTML
+}
 
 var boo = false
-
 var loop = setInterval(function() {
   var x = document.getElementsByClassName("_2pie")
   var y = document.getElementsByClassName("newsFeedComposer")

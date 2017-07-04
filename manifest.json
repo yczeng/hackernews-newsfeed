@@ -1,6 +1,6 @@
 {
   "name": "Convert Facebook Newsfeed to Hacker News",
-  "version": "0.0.0",
+  "version": "0.0.0.1",
   "author": "Catherine Zeng",
   "manifest_version": 2,
   "description": "Sick of your ad-ridden Facebook newsfeed? Convert it to Hacker News!",
