@@ -10,7 +10,6 @@ function getHackerNews(){
       if (xhr.readyState == XMLHttpRequest.DONE) {
           text = xhr.responseText
           replaceContent(text)
-          
       }
   }
   xhr.open('GET', 'https://news.ycombinator.com/', true);
@@ -18,14 +17,20 @@ function getHackerNews(){
   return
 }
 
+
+var boo = false
+
 var loop = setInterval(function() {
-  const config = { attributes: false, childList: true, characterData: false, subtree: true }
   var x = document.getElementsByClassName("_2pie")
-  var y = document.getElementsByClassName("fbUserContent")
+  var y = document.getElementsByClassName("newsFeedComposer")
 
   if (x[0] != null){
     if (y[0] != null){
+      if (window.boo == false){
       getHackerNews()
+      window.boo = true
+      }
     }
+    else window.boo = false
   }
 }, 20);

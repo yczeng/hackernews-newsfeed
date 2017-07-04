@@ -6,6 +6,9 @@
   "description": "Replace your Facebook NewsFeed with HackerNews!",
   "permissions": [
     "http://www.facebook.com/*",
+    "https://www.facebook.com/*",
+    "http://web.facebook.com/*",
+    "https://web.facebook.com/*",
     "https://news.ycombinator.com/*",
     "storage"
   ],
@@ -15,10 +18,9 @@
     },
   "content_scripts": [
     {
-        "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
+        "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*","http://web.facebook.com/*","https://web.facebook.com/*", "https://www.facebook.com/?ref=tn_tnmn"],
         "js" : [ "script.js"],
-        "run_at" : "document_start",
-        "all_frames" : false
+        "run_at" : "document_start"
     }
   ]
 }
