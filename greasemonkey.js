@@ -5,7 +5,7 @@
 // @author      Catherine Zeng
 // @description Tired of your cluttered Facebook newsfeed?
 // @include     https://www.facebook.com/*
-// @version     0.0.1
+// @version     0.0.2
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
 
@@ -19,18 +19,22 @@ function editFacebookContent (content) {
     var feed = document.getElementById("contentArea"),
         parser = new DOMParser(),
         list = parser.parseFromString(content, "text/html").getElementById("hnmain"),
-        morelink = list.getElementsByClassName("morelink")[0],
-        linkParent = list.getElementsByClassName("yclinks")[0].parentNode,
+        items = list.getElementsByClassName("itemlist")[0],
+        header = items.insertRow(0),
+        rows = items.getElementsByClassName("spacer"),
         subtext = list.getElementsByClassName("subtext"),
         sitestr = list.getElementsByClassName("comhead"),
         storyLinks = list.getElementsByClassName("storylink"),
-        image = list.getElementsByTagName("img")[0],
         i;
 
     // change hackernews styling
-    morelink.remove();
-    linkParent.remove();
-    image.remove();
+    list.getElementsByClassName("morelink")[0].remove();
+    list.getElementsByClassName("yclinks")[0].parentNode.remove();
+    list.getElementsByTagName("img")[0].remove();
+    list.getElementsByTagName("tr")[0].remove();
+
+    header.innerHTML = "<h2 style='background-color: #FF6600; padding:10px'>Hacker News</h2>";
+    items.style.padding = "10px";
 
     // change font styling for story sources, metadata
     for (i = 0; i < subtext.length; i++) {
@@ -41,6 +45,11 @@ function editFacebookContent (content) {
     for (i = 0; i < sitestr.length; i++) {
         sitestr[i].style.fontSize = "7pt";
         sitestr[i].style.color = "#828282";
+    }
+
+    // change padding on story rows
+    for (i = 0; i < rows.length; i++) {
+        rows[i].style.height = "10px";
     }
 
     // set links so they open a new tab
@@ -66,6 +75,21 @@ function editFacebookContent (content) {
 function preLoad (url) {
     var feed = document.getElementById("contentArea");
     feed.innerHTML = "<h2 align=center id='loading-data'>Retrieving Hackernews feed...</h2>";
+
+    console.log(
+        "%c ______________________________________________________________________________________ \n" +
+        "|                                                                                      |\n" +
+        "| NNN      NN EEEEEEEEE WW         WW  SSSSSSS FFFFFFFFFF EEEEEEEEE EEEEEEEE DDDDDDD   |\n" +
+        "| NN NN    NN EE        WW         WW SS       FF         EE        E        DD    DD  |\n" +
+        "| NN  NN   NN EE         WW       WW   SSSSSS  FF         EE        E        DD     DD |\n" +
+        "| NN   NN  NN EEEEEEE    WW   W   WW        SS FFFFFFFF   EEEEEEE   EEEEEE   DD     DD |\n" +
+        "| NN    NN NN EE          WW W W WW         SS FF         EE        E        DD    DD  |\n" +
+        "| NN      NNN EEEEEEEEE    WW   WW    SSSSSSS  FF         EEEEEEEEE EEEEEEEE DDDDDDD   |\n" +
+        "|______________________________________________________________________________________|\n" +
+        "@version 0.0.2",
+        "color: #FF6600"
+    );
+
 
     console.log(
         "%cRetrieving data from " + url.toString() + "...",
