@@ -3,8 +3,6 @@ Sick of your ad-ridden Facebook newsfeed? Convert it to Hacker News!
 
 This extension removes your Facebook newsfeed and replaces it with Hacker News.
 
-<img src="preview.png" width="100%">
-
 # Installation
 ## Chrome
 hackernews-newsfeed can be installed on the chrome webstore [here](https://chrome.google.com/webstore/detail/convert-facebook-newsfeed/edcoflgjlemkndaenboobeccnnlnondj).
@@ -13,6 +11,8 @@ Or you can clone this repo and upload the folder to chrome extensions at chrome:
 ```
 git clone https://github.com/CatherineZeng/hackernews-newsfeed
 ```
+
+<img src="preview.png" width="80%">
 
 ## Firefox/Greasemonkey/Tampermonkey
 If you have Firefox, install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/),
