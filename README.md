@@ -8,7 +8,7 @@ This extension removes your Facebook newsfeed and replaces it with Hacker News.
 # Installation
 hackernews-newsfeed can be installed on the chrome webstore [here](https://chrome.google.com/webstore/detail/convert-facebook-newsfeed/edcoflgjlemkndaenboobeccnnlnondj).
 
-Or you can clone this repo and upload the folder to chrome [extensions](chrome://extensions/).
+Or you can clone this repo and upload the folder to chrome extensions at chrome://extensions/.
 ```
 git clone https://github.com/CatherineZeng/hackernews-newsfeed
 ```
