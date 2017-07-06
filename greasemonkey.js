@@ -79,12 +79,12 @@ function preLoad (url) {
     console.log(
         "%c ______________________________________________________________________________________ \n" +
         "|                                                                                      |\n" +
-        "| NNN      NN EEEEEEEEE WW         WW  SSSSSSS FFFFFFFFFF EEEEEEEEE EEEEEEEE DDDDDDD   |\n" +
-        "| NN NN    NN EE        WW         WW SS       FF         EE        E        DD    DD  |\n" +
-        "| NN  NN   NN EE         WW       WW   SSSSSS  FF         EE        E        DD     DD |\n" +
-        "| NN   NN  NN EEEEEEE    WW   W   WW        SS FFFFFFFF   EEEEEEE   EEEEEE   DD     DD |\n" +
-        "| NN    NN NN EE          WW W W WW         SS FF         EE        E        DD    DD  |\n" +
-        "| NN      NNN EEEEEEEEE    WW   WW    SSSSSSS  FF         EEEEEEEEE EEEEEEEE DDDDDDD   |\n" +
+        "| NNN      NN EEEEEEEEE WW         WW  SSSSSSS FFFFFFFFFF EEEEEEEEE EEEEEEEEE DDDDDDD   |\n" +
+        "| NN NN    NN EE        WW         WW SS       FF         EE        EE        DD    DD  |\n" +
+        "| NN  NN   NN EE         WW       WW   SSSSSS  FF         EE        EE        DD     DD |\n" +
+        "| NN   NN  NN EEEEEEE    WW   W   WW        SS FFFFFFFF   EEEEEEE   EEEEEEE   DD     DD |\n" +
+        "| NN    NN NN EE          WW W W WW         SS FF         EE        EE        DD    DD  |\n" +
+        "| NN      NNN EEEEEEEEE    WW   WW    SSSSSSS  FF         EEEEEEEEE EEEEEEEEE DDDDDDD   |\n" +
         "|______________________________________________________________________________________|\n" +
         "@version 0.0.2",
         "color: #FF6600"
