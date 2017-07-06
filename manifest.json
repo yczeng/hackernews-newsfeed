@@ -23,7 +23,7 @@
   "content_scripts": [
     {
         "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*","http://web.facebook.com/*","https://web.facebook.com/*", "https://www.facebook.com/?ref=tn_tnmn"],
-        "js" : [ "script.js"],
+        "js" : ["chrome.js"],
         "run_at" : "document_start"
     }
   ]
