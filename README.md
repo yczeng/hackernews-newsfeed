@@ -3,7 +3,7 @@ Sick of your ad-ridden Facebook newsfeed? Convert it to Hacker News!
 
 This extension removes your Facebook newsfeed and replaces it with Hacker News.
 
-<img src="preview.png" width="60%">
+<img src="preview.png" width="100%">
 
 # Installation
 ## Chrome
