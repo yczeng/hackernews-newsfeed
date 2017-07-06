@@ -38,6 +38,8 @@ If you don't want to do the above option, you can do stuff the hard way.
 
 7. fin.
 
+![firefox](firefox.png)
+
 # License
 hackernews-newsfeed is available under the MIT license, see `LICENSE` file in the repository.
 
