@@ -1,4 +1,3 @@
-
 /**
  * @Anthony Pizzimenti
  * @desc Class containing useful style manipulation methods.

@@ -5,132 +5,11 @@
 // @author      Catherine Zeng
 // @description Tired of your cluttered Facebook newsfeed?
 // @include     https://www.facebook.com/*
-// @version     0.0.2
+// @version     0.0.3
 // @grant       GM_xmlhttpRequest
+// @require     https://raw.githubusercontent.com/apizzimenti/hackernews-newsfeed/master/scripts/Editor.js
+// @require     https://raw.githubusercontent.com/apizzimenti/hackernews-newsfeed/master/scripts/util.js
 // ==/UserScript==
-
-function _paramExist (param, type) {
-    return typeof param === type && param !== undefined && param !== null;
-}
-
-function absurl (root, path) {
-    if (_paramExist(root, "string") && _paramExist(path, "string")) {
-        if (root[root.length - 1] === "/") {
-            return root + path;
-        } else {
-            return root + "/" + path;
-        }
-    }
-    return null;
-}
-
-/**
- * @Anthony Pizzimenti
- * @desc Class containing useful style manipulation methods.
- * @param {object} content      Parent DOM container.
- * @property {object} content   Parent DOM container.
- * @constructor
- */
-function Editor (content) { this.content = content; }
-
-/**
- * @Anthony Pizzimenti
- * @desc Object wrapper for styling functions.
- * @type {{}}
- */
-Editor.prototype.style = {};
-
-/**
- * @author Anthony Pizzimenti
- * @desc Changes the font style attributes of a given list of DOM nodes.
- *
- * @param {Array} context                   Array of DOM nodes to be modified. Usually consists of rows.
- * @param {string} [family="Comic Sans"]    Desired font families.
- * @param {number} [size=12]                Desired font size.
- * @param {string} [weight=""]              Desired font weight.
- */
-Editor.prototype.style.font = function (context, family, size, weight) {
-    var i,
-        text;
-    
-    if (!_paramExist(context, "array")) {
-        console.error("Invalid font context provided.");
-        return;
-    }
-    
-    if (!_paramExist(family, "string")) {
-        family = "Comic Sans";
-    }
-    
-    if (!_paramExist(size, "number")) {
-        size = 12;
-    }
-    
-    if (!_paramExist(weight, "string")) {
-        weight = "";
-    }
-    
-    // modify text properties with defaults
-    for (i = 0; i < context.length; i++) {
-        text = context[i];
-        text.style.fontFamily = family;
-        text.style.fontSize = size.toString() + "pt";
-        text.style.fontWeight = weight;
-    }
-};
-
-Editor.prototype.removeFirst = {};
-
-Editor.prototype.removeFirst.byClass = function (classname) {
-    this.content.getElementsByClassName(classname)[0].remove();
-};
-
-Editor.prototype.removeFirst.byTag = function (tagname) {
-    this.content.getElementsByTagName(tagname)[0].remove();
-};
-
-Editor.prototype.links = {};
-
-Editor.prototype.links.absolute = function (list, subtext, url) {
-    var regpath_hide = /hide\?./,
-        regpath = /item\?.|user\?./,
-        regurl = /\//,
-        link,
-        links,
-        
-        i,
-        j;
-    
-    for (i = 0; i < subtext.length; i++) {
-        links = subtext[i].getElementsByTagName("a");
-        
-        // check for regex matches on hiding and item links
-        for (j = 0; j < links.length; j++) {
-            if (regpath_hide.test(links[j].href)) {
-                links[j].remove();
-            }
-        }
-    }
-    
-    // check for links everywhere else
-    links = this.content.getElementsByTagName("a");
-    for (i = 0; i < links.length; i++) {
-        link = links[i].href.split(regurl)[3];
-        
-        if (regpath.test(link)) {
-            links[i].href = absurl(url, link);
-        }
-    }
-};
-
-Editor.prototype.links.blank = function (context) {
-    var i;
-    
-    // set links so they open a new tab
-    for (i = 0; i < context.length; i++) {
-        context.target = "_blank";
-    }
-};
 
 /**
  * @author Anthony Pizzimenti
@@ -144,7 +23,7 @@ function editFacebookContent (content, url) {
         
         parser = new DOMParser(),
         list = parser.parseFromString(content, "text/html").getElementById("hnmain"),
-        s = new Editor(list),
+        s = new Editor(),
         
         items = list.getElementsByClassName("itemlist")[0],
         subtext = list.getElementsByClassName("subtext"),
@@ -154,14 +33,13 @@ function editFacebookContent (content, url) {
         header = items.insertRow(0),
         rows = items.getElementsByClassName("spacer"),
         
-        i,
-        j;
-
+        i;
+    
     // change hackernews styling
-    list.getElementsByClassName("morelink")[0].remove();
-    list.getElementsByClassName("yclinks")[0].parentNode.remove();
-    list.getElementsByTagName("img")[0].remove();
-    list.getElementsByTagName("tr")[0].remove();
+    s.removeFirst.parent(list, "yclinks");
+    s.removeFirst.byClass(list, "morelink");
+    s.removeFirst.byTag(list, "img");
+    s.removeFirst.byTag(list, "tr");
 
     header.innerHTML = "<h2 style='background-color: #FF6600; padding:10px'>Hacker News</h2>";
     items.style.padding = "10px";
@@ -175,9 +53,7 @@ function editFacebookContent (content, url) {
     s.style.font(sitestr, "Verdana", 7);
 
     // change padding on story rows
-    for (i = 0; i < rows.length; i++) {
-        rows[i].style.height = "10px";
-    }
+    s.style.height(rows, 10);
 
     // inject modified HTML
     feed.innerHTML = list.innerHTML;
@@ -266,4 +142,3 @@ function error (e) {
         onerror: error
     });
 })();
-
