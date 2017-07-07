@@ -9,7 +9,7 @@ hackernews-newsfeed can be installed on the chrome webstore [here](https://chrom
 
 Or you can clone this repo and upload the folder to chrome extensions at chrome://extensions/.
 ```
-git clone https://github.com/CatherineZeng/hackernews-newsfeed
+git clone https://github.com/yczeng/hackernews-newsfeed
 ```
 <img src="preview.png" width="820">
 
