@@ -11,7 +11,7 @@ Or you can clone this repo and upload the folder to chrome extensions at chrome:
 ```
 git clone https://github.com/yczeng/hackernews-newsfeed
 ```
-<img src="preview.png" width="820">
+![chrome](images/preview.png)
 
 ## Firefox/Greasemonkey/Tampermonkey
 If you have Firefox, install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/),
@@ -37,7 +37,7 @@ If you don't want to do the above option, you can do stuff the hard way.
 
 7. fin.
 
-![firefox](firefox.png)
+![firefox](images/firefox.png)
 
 # License
 hackernews-newsfeed is available under the MIT license, see `LICENSE` file in the repository.

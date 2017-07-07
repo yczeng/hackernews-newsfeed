@@ -13,17 +13,17 @@
   ],
 
   "icons": {
-    "128": "hacker_news.png",
-    "32": "hacker_news.png"
+    "128": "images/hacker_news.png",
+    "32": "images/hacker_news.png"
   },
 
   "browser_action": {
-    "default_icon": "hacker_news.png"
+    "default_icon": "images/hacker_news.png"
   },
   "content_scripts": [
     {
         "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*","http://web.facebook.com/*","https://web.facebook.com/*", "https://www.facebook.com/?ref=tn_tnmn"],
-        "js" : ["chrome.js"],
+        "js" : ["scripts/chrome.js"],
         "run_at" : "document_start"
     }
   ]
