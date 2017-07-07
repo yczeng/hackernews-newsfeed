@@ -13,12 +13,12 @@
   ],
 
   "icons": {
-    "128": "hacker_news.png",
-    "32": "hacker_news.png"
+    "128": "images/hacker_news.png",
+    "32": "images/hacker_news.png"
   },
 
   "browser_action": {
-    "default_icon": "hacker_news.png"
+    "default_icon": "images/hacker_news.png"
   },
   "content_scripts": [
     {
