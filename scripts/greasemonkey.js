@@ -7,8 +7,8 @@
 // @include     https://www.facebook.com/*
 // @version     0.0.3
 // @grant       GM_xmlhttpRequest
-// @require     https://raw.githubusercontent.com/apizzimenti/hackernews-newsfeed/master/scripts/Editor.js
-// @require     https://raw.githubusercontent.com/apizzimenti/hackernews-newsfeed/master/scripts/util.js
+// @require     https://greasyfork.org/scripts/31226-editor/code/Editor.js?version=204775
+// @require     https://greasyfork.org/scripts/31227-utilities/code/Utilities.js?version=204776
 // ==/UserScript==
 
 /**
