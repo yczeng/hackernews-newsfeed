@@ -2,11 +2,9 @@
 /**
  * @Anthony Pizzimenti
  * @desc Class containing useful style manipulation methods.
- * @param {object} content      Parent DOM container.
- * @property {object} content   Parent DOM container.
  * @constructor
  */
-function Editor (content) { this.content = content; }
+function Editor () { }
 
 /**
  * @Anthony Pizzimenti
@@ -18,7 +16,7 @@ Editor.prototype.style = {};
  * @author Anthony Pizzimenti
  * @desc Changes the font style attributes of a given list of DOM nodes.
  *
- * @param {NodeList} context                   NodeList of DOM nodes to be modified. Usually consists of rows.
+ * @param {NodeList} context                NodeList of DOM nodes to be modified. Usually consists of rows.
  * @param {string} [family="Comic Sans"]    Desired font families.
  * @param {number} [size=12]                Desired font size.
  * @param {string} [weight=""]              Desired font weight.
@@ -29,11 +27,6 @@ Editor.prototype.style = {};
 Editor.prototype.style.font = function (context, family, size, weight) {
     var i,
         text;
-    
-    if (!_paramExist(context, "NodeList")) {
-        console.error("Invalid font context provided.");
-        return;
-    }
     
     if (!_paramExist(family, "string")) {
         family = "Comic Sans";
@@ -67,11 +60,6 @@ Editor.prototype.style.font = function (context, family, size, weight) {
 Editor.prototype.style.height = function (subtext, height) {
     var i;
     
-    if (!_paramExist(subtext, "NodeList")) {
-        console.error("Invalid subtext.");
-        return;
-    }
-    
     if (!_paramExist(height, "number")) {
         height = "";
     }
@@ -92,14 +80,15 @@ Editor.prototype.removeFirst = {};
 /**
  * @author Anthony Pizzimenti
  * @desc Removes first DOM node's parent in class family.
- * @param {string} classname Family that contains element to be deleted.
+ * @param {NodeList} list       List of DOM nodes.
+ * @param {string} classname    Family that contains element to be deleted.
  * @returns {undefined}
  *
  * @this Editor
  */
-Editor.prototype.removeFirst.parent = function (classname) {
+Editor.prototype.removeFirst.parent = function (list, classname) {
     if (_paramExist(classname, "string")) {
-        this.content.getElementsByClassName(classname)[0].parentNode.remove();
+        list.getElementsByClassName(classname)[0].parentNode.remove();
     } else {
         console.error("Invalid class name provided.");
     }
@@ -108,14 +97,15 @@ Editor.prototype.removeFirst.parent = function (classname) {
 /**
  * @author Anthony Pizzimenti
  * @desc Removes first DOM node in class family.
- * @param {string} classname Family that contains element to be deleted.
+ * @param {NodeList} list       List of DOM nodes.
+ * @param {string} classname    Family that contains element to be deleted.
  * @returns {undefined}
  *
  * @this Editor
  */
-Editor.prototype.removeFirst.byClass = function (classname) {
+Editor.prototype.removeFirst.byClass = function (list, classname) {
     if (_paramExist(classname, "string")) {
-        this.content.getElementsByClassName(classname)[0].remove();
+        list.getElementsByClassName(classname)[0].remove();
     } else {
         console.error("Invalid class name provided.");
     }
@@ -124,14 +114,15 @@ Editor.prototype.removeFirst.byClass = function (classname) {
 /**
  * @author Anthony Pizzimenti
  * @desc Removes first DOM node in tag family.
- * @param {string} tagname Family that contains element to be deleted.
+ * @param {NodeList} list   List of DOM nodes.
+ * @param {string} tagname  Family that contains element to be deleted.
  * @returns {undefined}
  *
  * @this Editor
  */
-Editor.prototype.removeFirst.byTag = function (tagname) {
+Editor.prototype.removeFirst.byTag = function (list, tagname) {
     if (_paramExist(tagname, "string")) {
-        this.content.getElementsByTagName(tagname)[0].remove();
+        list.getElementsByTagName(tagname)[0].remove();
     } else {
         console.error("Invalid tag name provided.");
     }
@@ -146,13 +137,14 @@ Editor.prototype.links = {};
 /**
  * @author Anthony Pizzimenti
  * @desc Changes all relative links to absolute ones.
- * @param {NodeList} subtext   NodeList of DOM nodes.
- * @param {string} url      Root to join paths with.
+ * @param {NodeList} list       List of DOM nodes.
+ * @param {NodeList} subtext    NodeList of DOM nodes.
+ * @param {string} url          Root to join paths with.
  * @returns {undefined}
  *
  * @this Editor
  */
-Editor.prototype.links.absolute = function (subtext, url) {
+Editor.prototype.links.absolute = function (list, subtext, url) {
     var regpath_hide = /hide\?./,
         regpath = /item\?.|user\?./,
         regurl = /\//,
@@ -161,11 +153,6 @@ Editor.prototype.links.absolute = function (subtext, url) {
         
         i,
         j;
-    
-    if (!_paramExist(subtext, "NodeList")) {
-        console.error("Subtext provided is invalid. Must be a list of DOM nodes.");
-        return;
-    }
     
     if (!_paramExist(url, "string")) {
         console.error("URL provided is invalid.");
@@ -184,7 +171,7 @@ Editor.prototype.links.absolute = function (subtext, url) {
     }
     
     // check for links everywhere else
-    links = this.content.getElementsByTagName("a");
+    links = list.getElementsByTagName("a");
     for (i = 0; i < links.length; i++) {
         link = links[i].href.split(regurl)[3];
         
@@ -207,6 +194,6 @@ Editor.prototype.links.blank = function (subtext) {
     
     // set links so they open a new tab
     for (i = 0; i < subtext.length; i++) {
-        subtext.target = "_blank";
+        subtext[i].target = "_blank";
     }
 };
