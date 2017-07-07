@@ -11,8 +11,7 @@ Or you can clone this repo and upload the folder to chrome extensions at chrome:
 ```
 git clone https://github.com/CatherineZeng/hackernews-newsfeed
 ```
-
-<img src="preview.png" width="80%">
+<img src="preview.png" width="820">
 
 ## Firefox/Greasemonkey/Tampermonkey
 If you have Firefox, install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/),
