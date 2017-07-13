@@ -43,10 +43,10 @@ If you don't want to do the above option, you can do stuff the hard way.
 ### Why make this?
 It's hard for me to go without Facebook and the only way to curb my addiction is by replacing my newsfeed with something equally addicting, but more productive.
 
-### Why is the Chrome extension layout different from the Firefox extension?
+### Why is the Chrome extension different from the Firefox extension?
 I use Chrome so I built the extension for myself in Chrome. [apizzimenti](https://github.com/apizzimenti) saw my project on Github, thought it was a good idea, and sent a pull request with a Firefox implementation.
 
-### Why did you design the Chrome extension to cover the entire newsfeed?
+### Why does the Chrome extension cover the entire Facebook newsfeed?
 I don't want shortcuts to help me spend more time on Facebook.
 
 ### What can I do?
