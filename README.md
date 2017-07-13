@@ -52,5 +52,8 @@ I don't want shortcuts to help me spend more time on Facebook.
 ### What can I do?
 Right now the Hacker News css of the Chrome extension is changing the text on the right part of the search bar gray. If you can separate the Facebook css from the Hacker News css, feel free to send a pull request.
 
+### Is this a joke?
+yes
+
 # License
 hackernews-newsfeed is available under the MIT license. See `LICENSE` file in the repository.
