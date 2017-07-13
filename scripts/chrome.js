@@ -35,11 +35,9 @@ function addToggleFeedBtn() {
   </li>`;
   fbNav.children[0].innerHTML = ycBtn + navHTML;
 
-  var ycFeedBtn = fbNav.children[0].children[0];
-  var fbFeedBtn = fbNav.children[0].children[1];
-
-  fbFeedBtn.children[1].id = 'fbfeed';
-  fbFeedBtn.children[1].removeAttribute('href');
+  var fbFeedBtnLink = fbNav.children[0].children[1].children[1];
+  fbFeedBtnLink.id = 'fbfeed';
+  fbFeedBtnLink.removeAttribute('href');
 
   document.getElementById('yclogo').style.backgroundImage = `url(${chrome.extension.getURL('y18.gif')}`;
   document.getElementById('ycfeed').addEventListener('click', selectFeed);
