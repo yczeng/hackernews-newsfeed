@@ -47,7 +47,7 @@ I'm sick and tired of Facebook. I've tried removing the site multiple times, but
 ## Why is the Chrome extension layout different from the Firefox extension?
 I use Chrome so I built the extension for myself in Chrome. [apizzimenti](https://github.com/apizzimenti) saw my project on Github, thought it was a good idea, and sent a pull request with a Firefox implementation.
 
-## Why did you design the Chrome extension to cover the entire newsfeed, covering the left and right columns?
+## Why did you design the Chrome extension to cover the entire newsfeed?
 I don't want shortcuts to help me spend more time on Facebook.
 
 ## What can I do?
