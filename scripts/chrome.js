@@ -69,8 +69,7 @@ function processHTML(text){
   var newHTML = "";
 
   // Manual edits
-  var ycLogoUrl = chrome.extension.getURL('y18.gif');
-  text = text.replace('y18.gif', ycLogoUrl); // get local logo resource
+  text = text.replace('y18.gif', chrome.extension.getURL('y18.gif')); // get local logo resource
   text = text.replace('.css', '.xcss'); // sabotage yc css
   text = `<div id="hacker-news" class="hidden_elem">${text}</div>`; // avoid <html> inception
 
