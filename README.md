@@ -13,8 +13,6 @@ git clone https://github.com/yczeng/hackernews-newsfeed
 ```
 ![chrome](images/preview.png)
 
-For a version of the extension that shows Facebook's native side columns, use [this](https://github.com/dpfrakes/hackernews-newsfeed).
-
 ## Firefox/Greasemonkey/Tampermonkey
 If you have Firefox, install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/),
 the friendly user-script injection service. 
