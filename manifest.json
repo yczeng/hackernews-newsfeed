@@ -20,6 +20,9 @@
   "browser_action": {
     "default_icon": "images/hacker_news.png"
   },
+
+  "web_accessible_resources": ["y18.gif"],
+
   "content_scripts": [
     {
         "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*","http://web.facebook.com/*","https://web.facebook.com/*", "https://www.facebook.com/?ref=tn_tnmn"],
