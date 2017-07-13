@@ -41,7 +41,7 @@ If you don't want to do the above option, you can do stuff the hard way.
 
 # FAQ
 ### Why make this?
-I'm sick and tired of Facebook. I've tried removing the site multiple times, but I'm so addicted to it that blocking it is counterproductive. I've also tried [News Feed Eradicator](https://chrome.google.com/webstore/detail/news-feed-eradicator-for/fjcldmjmjhkklehbacihaiopjklihlgg?hl=en), but seeing my empty newsfeed makes me miss it. By replacing my Facebook newsfeed with something equally addicting but more educational like Hacker News, I am able to better curb my addiction.
+I've tried removing Facebook multiple times, but I'm so addicted to it that blocking it is counterproductive. [News Feed Eradicator](https://chrome.google.com/webstore/detail/news-feed-eradicator-for/fjcldmjmjhkklehbacihaiopjklihlgg?hl=en) works, but seeing my empty newsfeed makes me miss it. By replacing my Facebook newsfeed with something equally addicting but more useful, I am able to better curb my addiction.
 
 ### Why is the Chrome extension layout different from the Firefox extension?
 I use Chrome so I built the extension for myself in Chrome. [apizzimenti](https://github.com/apizzimenti) saw my project on Github, thought it was a good idea, and sent a pull request with a Firefox implementation.
