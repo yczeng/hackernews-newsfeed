@@ -41,7 +41,7 @@ If you don't want to do the above option, you can do stuff the hard way.
 
 # FAQ
 ### Why make this?
-I've tried removing Facebook multiple times, but I'm so addicted that removing it entirely is counterproductive. By replacing my Facebook newsfeed with something equally addicting but more useful like Hacker News, I am able to better curb my addiction.
+It's hard for me to go without Facebook and the only way to curb my addition is by replacing my newsfeed with something equally addicting, but more productive.
 
 ### Why is the Chrome extension layout different from the Firefox extension?
 I use Chrome so I built the extension for myself in Chrome. [apizzimenti](https://github.com/apizzimenti) saw my project on Github, thought it was a good idea, and sent a pull request with a Firefox implementation.
