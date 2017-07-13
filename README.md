@@ -41,7 +41,3 @@ If you don't want to do the above option, you can do stuff the hard way.
 
 # License
 hackernews-newsfeed is available under the MIT license. See `LICENSE` file in the repository.
-
-
-# Why?
-So you can click on clickbait AND feel good about yourself. lmfao
