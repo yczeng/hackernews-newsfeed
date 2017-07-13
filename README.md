@@ -40,17 +40,16 @@ If you don't want to do the above option, you can do stuff the hard way.
 ![firefox](images/firefox.png)
 
 # FAQ
-## Why make this?
+### Why make this?
 I'm sick and tired of Facebook. I've tried removing the site multiple times, but I'm so addicted to it that blocking it is counterproductive. I've also tried [News Feed Eradicator](https://chrome.google.com/webstore/detail/news-feed-eradicator-for/fjcldmjmjhkklehbacihaiopjklihlgg?hl=en), but seeing my empty newsfeed makes me miss it. By replacing my Facebook newsfeed with something equally addicting but more educational like Hacker News, I am able to better curb my addiction.
 
-
-## Why is the Chrome extension layout different from the Firefox extension?
+### Why is the Chrome extension layout different from the Firefox extension?
 I use Chrome so I built the extension for myself in Chrome. [apizzimenti](https://github.com/apizzimenti) saw my project on Github, thought it was a good idea, and sent a pull request with a Firefox implementation.
 
-## Why did you design the Chrome extension to cover the entire newsfeed?
+### Why did you design the Chrome extension to cover the entire newsfeed?
 I don't want shortcuts to help me spend more time on Facebook.
 
-## What can I do?
+### What can I do?
 Right now the Hacker News css of the Chrome extension is changing the text on the right part of the search bar gray. If you can separate the Facebook css from the Hacker News css, feel free to send a pull request.
 
 # License
