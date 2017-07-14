@@ -41,7 +41,7 @@ If you don't want to do the above option, you can do stuff the hard way.
 
 # FAQ
 ### Why make this?
-It's hard for me to go without Facebook and the only way to curb my addiction is by replacing my newsfeed with something equally addictive, like Hacker News.
+I'm hopelessly addicted to Facebook and the only way to curb my addiction is by replacing my newsfeed with something equally addictive, like Hacker News.
 
 ### Why is the Chrome extension different from the Firefox extension?
 I use Chrome so I built the extension for myself in Chrome. [apizzimenti](https://github.com/apizzimenti) saw my project on Github, thought it was a good idea, and sent a pull request with a Firefox implementation.
