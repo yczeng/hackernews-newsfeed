@@ -1,8 +1,10 @@
+// replace newsfeed with text
 function replaceContent(text){
   var x = document.getElementsByClassName("_2pie");
   x[0].innerHTML = text
 }
 
+// get hackernews html and replace newsfeed with it
 function getHackerNews(){
   var xhr = new XMLHttpRequest();
   var text = ""
@@ -16,8 +18,9 @@ function getHackerNews(){
   xhr.send(null);
   return
 }
-var badlinks = new Array("item", "item", "vote", "newest", "news", "threads", "new","show", "ask", "jobs", "submit", "security", "lists", "bookmark", "dmca", "flag", "hide", "user", "logout", "login", "from")
 
+// convert local urls to absolute urls
+var badlinks = new Array("item", "item", "vote", "newest", "news", "threads", "new","show", "ask", "jobs", "submit", "security", "lists", "bookmark", "dmca", "flag", "hide", "user", "logout", "login", "from")
 function processHTML(text){
   var newHTML = ""
   var lines = text.split('\n');
@@ -36,6 +39,7 @@ function processHTML(text){
   return newHTML
 }
 
+// checks for newsfeed or mutation to inject hackernews
 var boo = false
 var loop = setInterval(function() {
   var x = document.getElementsByClassName("_2pie")
