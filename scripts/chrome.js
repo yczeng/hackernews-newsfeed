@@ -20,7 +20,7 @@ function getHackerNews(){
 }
 
 // convert local urls to absolute urls
-var badlinks = new Array("item", "item", "vote", "newest", "news", "threads", "new","show", "ask", "jobs", "submit", "security", "lists", "bookmark", "dmca", "flag", "hide", "user", "logout", "login", "from")
+var badlinks = new Array("y18", "item", "item", "vote", "newest", "news", "threads", "new", "show", "ask", "jobs", "submit", "security", "lists", "bookmark", "dmca", "flag", "hide", "user", "logout", "login", "from")
 function processHTML(text){
   var newHTML = ""
   var lines = text.split('\n');
@@ -28,10 +28,10 @@ function processHTML(text){
   for(var i = 0;i < lines.length;i++){
     var tempLine = lines[i]
     for(var j = 0; j < badlinks.length; j++){
-      index = tempLine.search("href=\"" + badlinks[j])
+      index = tempLine.search("(href|src)=\"" + badlinks[j])
 
       if (index != -1){
-        tempLine = tempLine.slice(0, index + 5) + "\"https://news.ycombinator.com/" + tempLine.slice(index+6)
+        tempLine = tempLine.slice(0, index + tempLine.substring(index).indexOf("=") + 1) + "\"https://news.ycombinator.com/" + tempLine.slice(index + tempLine.substring(index).indexOf("=") + 2)
       }
     }
     newHTML = newHTML.concat(tempLine) + "\n"
